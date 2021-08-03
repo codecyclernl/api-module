@@ -1,0 +1,14 @@
+{
+    "name": "codecycler/api-module",
+    "description": "API module for October CMS",
+    "type": "october-module",
+    "authors": [
+        {
+            "name": "Sebastiaan Kloos",
+            "email": "sebastiaan@codecycler.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"	
+    }
+}
