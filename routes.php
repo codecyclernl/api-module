@@ -25,8 +25,12 @@ Route::group([
         ];
     });
 
-    Route::get('resources/{resource}', 'ResourcesController@index');
+    Route::group([
+        'middleware' => 'auth:api',
+    ], function () {
+        Route::get('resources/{resource}', 'ResourcesController@index');
 
-    Route::get('resources/{resource}/{id}', 'ResourcesController@show');
+        Route::get('resources/{resource}/{id}', 'ResourcesController@show');
+    });
 
 });
