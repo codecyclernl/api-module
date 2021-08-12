@@ -1,5 +1,5 @@
 {
-    "name": "codecycler/api-module",
+    "name": "codecycler/api",
     "description": "API module for October CMS",
     "type": "october-module",
     "authors": [

@@ -1,5 +1,7 @@
 <?php namespace Api;
 
+use App;
+use Api\Classes\ApiManager;
 use October\Rain\Support\ModuleServiceProvider;
 
 class ServiceProvider extends ModuleServiceProvider
@@ -26,5 +28,8 @@ class ServiceProvider extends ModuleServiceProvider
 
     protected function registerSingletons()
     {
+        App::singleton('api.manager', function () {
+            return ApiManager::instance();
+        });
     }
 }
