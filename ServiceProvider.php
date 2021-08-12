@@ -5,6 +5,7 @@ use Event;
 use BackendAuth;
 use Api\Classes\ApiManager;
 use Laravel\Passport\Passport;
+use Api\Console\InstallApiModule;
 use Api\Http\Middleware\Authenticate;
 use October\Rain\Support\ModuleServiceProvider;
 use Api\Extend\BackendUser as ExtendBackendUser;
@@ -24,6 +25,7 @@ class ServiceProvider extends ModuleServiceProvider
         $this->registerSingletons();
         $this->registerProviders();
         $this->registerMiddleware();
+        $this->registerConsole();
     }
 
     public function boot()
@@ -91,5 +93,10 @@ class ServiceProvider extends ModuleServiceProvider
     {
         $this->app->register('\Laravel\Passport\PassportServiceProvider');
         $this->app->register('\Illuminate\Auth\AuthServiceProvider');
+    }
+
+    protected function registerConsole()
+    {
+        $this->registerConsoleCommand('api.install', InstallApiModule::class);
     }
 }

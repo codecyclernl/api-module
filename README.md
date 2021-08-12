@@ -3,11 +3,8 @@
 ### Require with composer
 `composer require codecycler/api`
 
-### Publish auth config
-`php artisan vendor:publish --tag=october.api`
-
-### Generate initial Passport keys 
-`php artisan passport:install`
+### Run migrations & install Passport
+`php artisan api:install`
 
 ## Basics
 ### Registering resources
