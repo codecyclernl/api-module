@@ -2,7 +2,7 @@
 
 use Api\Classes\ApiManager;
 
-class Resources extends Controller
+class ResourcesController extends Controller
 {
     public function index($version, $resource)
     {
